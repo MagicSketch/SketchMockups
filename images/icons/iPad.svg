@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Square/iPad</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,3.00044415 C0,1.34334461 1.33425951,0 2.99610022,0 L29.0038998,0 C30.6586002,0 32,1.35178054 32,3.00044415 L32,42.9995558 C32,44.6566554 30.6657405,46 29.0038998,46 L2.99610022,46 C1.34139976,46 0,44.6482195 0,42.9995558 L0,3.00044415 Z M1.64102564,4.92857143 L1.64102564,39.4285714 L30.3589744,39.4285714 L30.3589744,4.92857143 L1.64102564,4.92857143 Z M15.5897436,44.3571429 C16.496057,44.3571429 17.2307692,43.6216107 17.2307692,42.7142857 C17.2307692,41.8069608 16.496057,41.0714286 15.5897436,41.0714286 C14.6834302,41.0714286 13.9487179,41.8069608 13.9487179,42.7142857 C13.9487179,43.6216107 14.6834302,44.3571429 15.5897436,44.3571429 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="32" height="46" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="34" height="48">
+            <rect x="-1" y="-1" width="34" height="48" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Square/iPad" stroke-width="2">
+            <g id="Icon/iPad" transform="translate(14.000000, 7.000000)">
+                <g id="iPad">
+                    <use stroke="#000000" mask="url(#mask-2)" fill="#4F4F4F" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use stroke="#FFFFFF" mask="url(#mask-3)" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

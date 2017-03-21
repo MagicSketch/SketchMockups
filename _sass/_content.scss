@@ -1,0 +1,131 @@
+
+// Template category menu css
+.content-left{
+	position: fixed;
+}
+
+.row-container{
+	border-radius: 7px;
+	height: 60px;
+	width: 100%;
+	margin-bottom:10px;
+
+	.row-icon{
+		margin-left: 6px;
+		margin-right: 14px;
+	}
+
+	.row-text{
+		font-weight: 300;
+	}
+
+	.row-count{
+		float:right;
+		margin-right: 11px;
+		margin-top: 20px;
+	}
+
+	&:hover, &.active{
+		background-color: rgba(0,0,0, 0.08);
+	}
+}
+
+// Template card css
+$price-width: 70px;
+$masonry-width: 236px;
+
+
+.grid-sizer {
+	width: 31%;
+}
+
+.grid-item {
+	width: 31%;
+	margin-bottom: 20px;
+
+	.preview-image {
+		margin-bottom: 9px;
+
+		img {
+			border-radius: 7px;
+		}
+	}
+
+	.info-left{
+		$section-width: $masonry-width - $price-width;
+		$padding: 14px;
+		$author-profile-width: 25px;
+		$author-profile-margin: 8px;
+
+
+		padding: 0 $padding/2;
+		float:left;
+
+		width: $section-width;
+
+		.title{
+			font-size: 14px;
+			margin-bottom: 4px;
+		}
+
+		.description{
+			font-size: 12px;
+			margin-bottom: 5px;
+		}
+
+		.link{
+			margin-bottom: 3px;
+			a{
+				font-size: 11px;
+				color: #B7B7B7;
+			}
+		}
+
+		.author-section{
+			.profile-picture img{
+				width: $author-profile-width;
+				height: $author-profile-width;
+
+				border-radius: 50%;
+				margin-right: $author-profile-margin;
+				margin-top: 3px;
+				float:left;
+			}
+
+			.author-text{
+				font-size: 11px;
+				max-width: $section-width - $padding - $author-profile-width - $author-profile-margin;
+				float:left;
+			}
+		}
+	}
+
+	.info-right{
+		float:right;
+		width:$price-width - 7px;
+		text-align: right;
+		font-weight: 300;
+		margin-right: 7px;
+
+		&.free{
+			color: #B7B7B7;
+		}
+
+		&.price {
+			color: #333;
+		}
+	}
+}
+.grid-item--width2 { width: 400px; }
+
+// Loader css
+.loader{
+	width: 100%;
+	// background-color: rgba(0,0,0, 0.08);
+	// border-radius: 7px;
+
+	margin-top: 64px;
+
+	padding: 12px 0;
+	text-align: center;
+}

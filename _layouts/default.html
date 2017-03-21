@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="content-left col-md-3">
+          <a href="#" class="category-row">
+            <div class="row-container active"><span class="row-icon"><img src="/images/icons/All.svg" /></span><span class="row-text">All</span><span class="badge row-count">999</span></div>
+            <div class="clearfix"></div>
+          </a>
+
+          <a href="#" class="category-row">
+            <div class="row-container"><span class="row-icon"><img src="/images/icons/iPhone.svg" /></span><span class="row-text">iPhone</span><span class="badge row-count">80</span></div>
+          </a>
+
+          <a href="#" class="category-row">
+            <div class="row-container"><span class="row-icon"><img src="/images/icons/iPad.svg" /></span><span class="row-text">iPad</span><span class="badge row-count">4</span></div>
+          </a>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="content-right col-md-9">{{ content }}</div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

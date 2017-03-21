@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Square/iPhone</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,3.00261497 C0,1.34431651 1.33599155,0 3.00684834,0 L19.9931517,0 C21.6537881,0 23,1.33389258 23,3.00261497 L23,44.997385 C23,46.6556835 21.6640085,48 19.9931517,48 L3.00684834,48 C1.34621185,48 0,46.6661074 0,44.997385 L0,3.00261497 Z M1.7037037,7.71428571 L1.7037037,40.2857143 L21.2962963,40.2857143 L21.2962963,7.71428571 L1.7037037,7.71428571 Z M11.5,46.2857143 C12.676162,46.2857143 13.6296296,45.3263245 13.6296296,44.1428571 C13.6296296,42.9593898 12.676162,42 11.5,42 C10.323838,42 9.37037037,42.9593898 9.37037037,44.1428571 C9.37037037,45.3263245 10.323838,46.2857143 11.5,46.2857143 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="23" height="48" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="25" height="50">
+            <rect x="-1" y="-1" width="25" height="50" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Square/iPhone" stroke-width="2">
+            <g id="Icon/iPhone" transform="translate(18.000000, 6.000000)">
+                <g id="iPhone">
+                    <use stroke="#000000" mask="url(#mask-2)" fill="#4F4F4F" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use stroke="#FFFFFF" mask="url(#mask-3)" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

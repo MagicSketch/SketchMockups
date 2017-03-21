@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Square/All</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M49,28 L49,25 L31,25 L31,47 L47.5,47 L56,47 L56,28 L49,28 Z M2,4 L58,4 L58,55 L2,55 L2,4 Z M5,37.497101 L5,44.502899 C5,45.328344 5.67160113,46 6.50006311,46 L11.9999369,46 C12.8330193,46 13.5,45.329725 13.5,44.502899 L13.5,37.497101 C13.5,36.671656 12.8283989,36 11.9999369,36 L6.50006311,36 C5.66698074,36 5,36.670275 5,37.497101 Z" id="path-1"></path>
+        <path d="M20.1402774,35.1428571 L29.8597226,35.1428571 C29.8537697,35.2638524 29.8507463,35.3859181 29.8507463,35.5089286 C29.8507463,38.0223959 31.1130561,40.1414347 32.8358209,40.7933036 L32.8358209,41 L17.1641791,41 L17.1641791,40.7933036 C18.8869439,40.1414347 20.1492537,38.0223959 20.1492537,35.5089286 C20.1492537,35.3859181 20.1462303,35.2638524 20.1402774,35.1428571 Z M0,1.99880102 C0,0.894893698 0.889064278,0 1.99091407,0 L48.0090859,0 C49.1086374,0 50,0.902715648 50,1.99880102 L50,32.4119133 C50,33.5158206 49.1109357,34.4107143 48.0090859,34.4107143 L1.99091407,34.4107143 C0.891362589,34.4107143 0,33.5079986 0,32.4119133 L0,1.99880102 Z M2.19668543,2.69887955 L2.19668543,27.8214286 L47.8033146,27.8214286 L47.8033146,2.69887955 L2.19668543,2.69887955 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="50" height="41" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="52" height="43">
+            <rect x="-1" y="-1" width="52" height="43" fill="white"></rect>
+            <use xlink:href="#path-3" fill="black"></use>
+        </mask>
+        <path d="M0,3.0005775 C0,1.34340431 1.34308127,0 3.00138694,0 L18.9986131,0 C20.6562333,0 22,1.35196465 22,3.0005775 L22,27.9994225 C22,29.6565957 20.6569187,31 18.9986131,31 L3.00138694,31 C1.3437667,31 0,29.6480353 0,27.9994225 L0,3.0005775 Z M1.12820513,3.32142857 L1.12820513,26.5714286 L20.8717949,26.5714286 L20.8717949,3.32142857 L1.12820513,3.32142857 Z M10.7179487,29.8928571 C11.3410392,29.8928571 11.8461538,29.3971724 11.8461538,28.7857143 C11.8461538,28.1742562 11.3410392,27.6785714 10.7179487,27.6785714 C10.0948582,27.6785714 9.58974359,28.1742562 9.58974359,28.7857143 C9.58974359,29.3971724 10.0948582,29.8928571 10.7179487,29.8928571 Z" id="path-6"></path>
+        <mask id="mask-7" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="22" height="31" fill="white">
+            <use xlink:href="#path-6"></use>
+        </mask>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="24" height="33">
+            <rect x="-1" y="-1" width="24" height="33" fill="white"></rect>
+            <use xlink:href="#path-6" fill="black"></use>
+        </mask>
+        <path d="M0,2.99428189 C0,1.34058566 1.34237885,0 3.00335124,0 L10.9966488,0 C12.6553538,0 14,1.3405687 14,2.99428189 L14,26.0057181 C14,27.6594143 12.6576211,29 10.9966488,29 L3.00335124,29 C1.34464615,29 0,27.6594313 0,26.0057181 L0,2.99428189 Z M1.03703704,4.66071429 L1.03703704,24.3392857 L12.962963,24.3392857 L12.962963,4.66071429 L1.03703704,4.66071429 Z M7,27.9642857 C7.71592468,27.9642857 8.2962963,27.3846544 8.2962963,26.6696429 C8.2962963,25.9546314 7.71592468,25.375 7,25.375 C6.28407532,25.375 5.7037037,25.9546314 5.7037037,26.6696429 C5.7037037,27.3846544 6.28407532,27.9642857 7,27.9642857 Z" id="path-9"></path>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="14" height="29" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <mask id="mask-11" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="16" height="31">
+            <rect x="-1" y="-1" width="16" height="31" fill="white"></rect>
+            <use xlink:href="#path-9" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Square/All">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Combined-Shape"></g>
+            <g id="Icon/iMac" mask="url(#mask-2)" stroke-width="2">
+                <g transform="translate(5.000000, 10.000000)" id="iMac">
+                    <g>
+                        <use stroke="#000000" mask="url(#mask-4)" fill="#4F4F4F" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-5)" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+            </g>
+            <g id="Icon/iPad" mask="url(#mask-2)" stroke-width="2">
+                <g transform="translate(29.000000, 21.000000)" id="iPad">
+                    <g>
+                        <use stroke="#000000" mask="url(#mask-7)" fill="#4F4F4F" fill-rule="evenodd" xlink:href="#path-6"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-8)" xlink:href="#path-6"></use>
+                    </g>
+                </g>
+            </g>
+            <image id="Bitmap" x="4" y="30" width="11" height="22" xlink:href="data:image/png;base64,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"></image>
+            <g id="Icon/iPhone" transform="translate(44.000000, 23.000000)" stroke-width="2">
+                <g id="iPhone">
+                    <use stroke="#000000" mask="url(#mask-10)" fill="#4F4F4F" fill-rule="evenodd" xlink:href="#path-9"></use>
+                    <use stroke="#FFFFFF" mask="url(#mask-11)" xlink:href="#path-9"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
