@@ -45,6 +45,7 @@ $masonry-width: 236px;
 
 	.preview-image {
 		margin-bottom: 9px;
+		text-align: center;
 
 		img {
 			border-radius: 7px;
@@ -114,6 +115,14 @@ $masonry-width: 236px;
 		&.price {
 			color: #333;
 		}
+
+		.price-light-text{
+			color: #ffd52f;
+		}
+
+		.price-dim-text{
+			color: #B7B7B7;
+		}
 	}
 }
 .grid-item--width2 { width: 400px; }
@@ -128,4 +137,21 @@ $masonry-width: 236px;
 
 	padding: 12px 0;
 	text-align: center;
+}
+
+// Submit section
+.submit-section{
+	display: none;
+	text-align: center;
+
+	a {
+		font-weight: 300;
+		border-radius: 8px;
+        background-color: #7ED321;
+        color: #fff;
+
+        padding: 20px 100px;
+
+        margin-left: 22px;
+	}
 }
