@@ -3,6 +3,16 @@ var pageOffset = '';
 var isLoading = false;
 var tierList = [0, 5.99, 19.99];
 
+function slugify(text)
+{
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
+}
+
 function getMenuString(deviceString){
 	return deviceString.toUpperCase().replace(' ', '');
 }
@@ -74,7 +84,7 @@ function getTemplate(deviceType, offset){
 
 	        	if(json.records && json.records.length > 0){
 	        		$.each(json.records, function(index, r){
-	        			var card = new createTemplateCard('#', r.fields["URL"], r.fields["Preview"], r.fields["Name"], '', './images/favicon.png', r.fields["Author"]+'<br/>iOS, MAC', r.fields["Price"]);
+	        			var card = new createTemplateCard('/template/'+slugify(r.fields["Name"]), r.fields["URL"], r.fields["Preview"], r.fields["Name"], '', './images/favicon.png', r.fields["Author"]+'<br/>iOS, MAC', r.fields["Price"]);
 	        			gallery.append(card).masonry( 'appended', card);
 	        		});
 
