@@ -3,14 +3,14 @@
 Template generate script pre-install:
 
 Pug (template engine):
-npm install pug-cli -g
+`npm install pug-cli -g`
 
 Reference:
 https://github.com/pugjs/pug
 
 
 jq (shell json parser):
-brew install jq
+`brew install jq`
 
 Reference:
 https://stedolan.github.io/jq/
@@ -19,10 +19,10 @@ https://stedolan.github.io/jq/
 cd `_scripts`
 
 Generate all templates:
-./generate-template-pages.sh all
+`./generate-template-pages.sh all`
 
 Generate only menu:
-./generate-template-pages.sh count
+`./generate-template-pages.sh count`
 
 Generate a specified template: (TODO)
-./generate-template-pages.sh name xxxx
+`./generate-template-pages.sh name xxxx`
