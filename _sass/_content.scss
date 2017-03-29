@@ -2,6 +2,10 @@
 // Template category menu css
 .content-left{
 	position: fixed;
+
+	@include media-query($on-md) {
+		display: none;
+	}
 }
 
 .row-container{
@@ -37,11 +41,27 @@ $masonry-width: 236px;
 
 .grid-sizer {
 	width: 31%;
+
+	@include media-query($on-md) {
+        width: 48%;
+    }
+
+    @include media-query($on-palm) {
+        width: 100%;
+    }
 }
 
 .grid-item {
 	width: 31%;
 	margin-bottom: 20px;
+
+	@include media-query($on-md) {
+        width: 48%;
+    }
+
+    @include media-query($on-palm) {
+        width: 100%;
+    }
 
 	.preview-image {
 		margin-bottom: 9px;

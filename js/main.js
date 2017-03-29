@@ -64,7 +64,7 @@ function createTemplateCard(link, extLink, images, title, description, profileUr
 	return row;
 }
 
-function getTemplate(deviceType, offset){
+function getTemplate(deviceType, offset, keyword){
 	var container = $('#templateContainer');
 
 	if(pageOffset != 'END'){
@@ -116,7 +116,7 @@ function getParameterByName(name) {
 $(document).ready(function(){
 	var deviceType = getParameterByName("device") || '';
 
-	getTemplate(deviceType, pageOffset);
+	getTemplate(deviceType, pageOffset, '');
 
 	gallery = $('.grid').masonry({
 		// options
@@ -126,11 +126,28 @@ $(document).ready(function(){
 		percentPosition: true
 	});
 
-	$('#menu'+getMenuString(deviceType==''?'All':deviceType)).addClass('active');
+	$('[category="'+getMenuString(deviceType==''?'All':deviceType)+'"]').addClass('active');
+
+	$('#navToggleButton').click(function(e){
+		$('#navMenu').slideToggle(200);
+	});
+
+	$('.search-input').on('keypress', function(e){
+        if (e.keyCode == 13) {
+            var box = $(e.target);
+            box.blur();
+
+            $('.search-input').val(box.val());
+
+            pageOffset = '';
+            
+            getTemplate(deviceType, pageOffset, box.val());
+        }
+    });
 
 	$(window).scroll(function() {
 		if($(window).scrollTop() + $(window).height() > $(document).height() - 100 && !isLoading) {
-			getTemplate(deviceType, pageOffset);
+			getTemplate(deviceType, pageOffset, '');
 		}
 	});
 

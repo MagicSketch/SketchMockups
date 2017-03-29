@@ -1,12 +1,40 @@
 <header class="site-header">
   <div class="site-title">SketchPerspectiveMockups</div>
   <div class="search-field">
-    <div class="search-container">
-      <div class=""></div>
+    <div class="nav-search search-bar-container">
+      <span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+      <span><input type="text" placeholder="Search" class="search-input" /></span>
     </div>
   </div>
   <div class="how-to-use">
     <a href="#" class="tutor-link">How to use?</a>
     <a href="#" class="submit-button">Submit your own</a>
+  </div>
+
+  <div class="site-nav" id="navToggleButton">
+    <div class="menu-icon"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="nav-menu" id="navMenu">
+    <div class="col-sm-12 col-xs-12">
+      <div class="col-sm-12 col-xs-12 mobile-search">
+        <div class="col-sm-12 col-xs-12">
+          <div class="search-bar-container">
+            <span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+            <span><input type="text" placeholder="Search" class="search-input" /></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-xs-12 mobile-how-to-use">
+        <span class="col-sm-6 col-xs-6"><a href="#" class="tutor-link">How to use?</a></span>
+        <span class="col-sm-6 col-xs-6"><a href="#" class="submit-button">Submit your own</a></span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="category col-sm-12 col-xs-12">
+      {% include menu.html %}
+    </div>
   </div>
 </header>
