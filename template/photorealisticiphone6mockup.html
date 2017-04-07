@@ -1,0 +1,100 @@
+---
+title: 8 Isolated iPhone 6s mockups
+permalink: /template/photorealisticiphone6mockup/
+---
+ <script type="text/javascript">var galleryItems = [];
+function constructGalleryItem(){
+	var dom = $('.gallery-item');
+	$.each(dom, function(index, img){
+		galleryItems.push({
+			src: img.src,
+			w: img.clientWidth,
+			h: img.clientHeight
+		});
+	});
+}
+function openGallery(index){
+	var pswpElement = document.querySelectorAll('.pswp')[0];
+	if(galleryItems.length == 0){
+		constructGalleryItem();
+	}
+	var options = {
+		index: index,
+		showHideOpacity: true,
+		bgOpacity: 0.95
+	};
+	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+	gallery.init();
+}
+$(document).ready(function(){
+	$('.template-gallery').slick({
+		dots: true,
+		arrows: false,
+	});
+	$.each($('.gallery-item'), function(index, img){
+		$(img).click(function(e){
+			openGallery(index);
+		});
+	});
+});
+
+</script><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="pswp__bg"></div>
+<div class="pswp__scroll-wrap">
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div> 
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="preview-section">
+<div class="social">
+<div class="social-icon"><img src="/images/twitter.svg" /></div>
+<div class="social-icon"><img src="/images/facebook.svg" /></div>
+<div class="clearfix"></div>
+</div>
+<div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/89du49ftTQWWwWK3mZXh_free-iphone-6-mockups.jpg"/></div></div>
+</div>
+<div class="template-detail">
+<div class="template-left">
+<div class="template-title">Photorealistic iPhone 6 Mockup</div>
+<div class="template-description">
+</div>
+<div class="template-link"><a href="https://colorlib.com/wp/free-psd-iphone-mockup-templates/" target="_blank">colorlib.com</a></div>
+<div class="author-section">
+<div class="profile-picture">
+<img src="/images/profile.png">
+</div>
+<div class="author-text">Damir<br>iOS, MAC
+</div>
+</div>
+</div><div class="template-right price">$$$</div><div class="clearfix"></div>
+<div class="visit-link"><a href="https://colorlib.com/wp/free-psd-iphone-mockup-templates/" target="_blank">Visit Page ➞</a></div>
+</div>

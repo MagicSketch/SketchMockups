@@ -40,7 +40,7 @@ if [ "$option" = "all" ]; then
 		while [ $i -lt $size ]
 		do
 			# Slugify template name, to be used in permalink
-			templateSlug=`jq -r --arg i $i '.records[$i | tonumber].fields.Name' dump.json | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z`
+			templateSlug=`jq -r --arg i $i '.records[$i | tonumber].fields.Name' dump.json | awk '{$1=$1};1' | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z`
 
 			# Template json object
 		    templateJson=`jq --arg i $i --arg slug $templateSlug '{r: .records[$i | tonumber], s: $slug, host: .records[$i | tonumber].fields.URL | match("^http[s]?://([^/]*)")}' dump.json`
