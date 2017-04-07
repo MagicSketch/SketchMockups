@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>social/facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M36,32.25 C36,34.3125 34.3125,36 32.25,36 L24,36 L24,21 L28.5,21 L28.5,16.5 L24,16.5 L24.0075,13.9905 C24.0075,12.6405001 24.4605,12 26.4015,12 L28.5,12 L28.5,6 L22.5,6 C18,6 18,10.5 18,12 L18,16.5 L15,16.5 L15,21 L18,21 L18,36 L3.75,36 C1.6875,36 0,34.3125 0,32.25 L0,3.75 C0,1.6875 1.6875,0 3.75,0 L32.25,0 C34.3125,0 36,1.6875 36,3.75 L36,32.25 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.-Detail" transform="translate(-952.000000, -92.000000)">
+            <g id="social/facebook" transform="translate(952.000000, 92.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <g id="Color/SemiWhite" mask="url(#mask-2)" fill-rule="evenodd" fill="#FFFFFF" fill-opacity="0.5">
+                    <rect id="Background" x="0" y="0" width="36" height="36"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
