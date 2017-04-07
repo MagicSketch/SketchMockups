@@ -38,16 +38,16 @@ function createTemplateCard(link, extLink, images, title, description, profileUr
 	el.href = extLink;
 
 	var previewImageDiv = $('<div>').addClass('preview-image').appendTo(row);
-	var previewLink = $('<a>').attr({'href': link}).appendTo(previewImageDiv);
+	var previewLink = $('<a>').attr({'href': link, 'target': '_blank'}).appendTo(previewImageDiv);
 	var previewImage = $('<img>').attr({'src': cover}).appendTo(previewLink);
 
 	var infoSection = $('<div>').addClass('info').appendTo(row);
 
 	var infoLeft = $('<div>').addClass('info-left').appendTo(infoSection);
 	
-	$('<div>').addClass('title').append($('<a>').attr({'href': link}).html(title)).appendTo(infoLeft);
-	$('<div>').addClass('description').append($('<a>').attr({'href': link}).html(description)).appendTo(infoLeft);
-	$('<div>').addClass('link').append($('<a>').attr({'href': link}).html(el.hostname)).appendTo(infoLeft);
+	$('<div>').addClass('title').append($('<a>').attr({'href': link, 'target': '_blank'}).html(title)).appendTo(infoLeft);
+	$('<div>').addClass('description').append($('<a>').attr({'href': link, 'target': '_blank'}).html(description)).appendTo(infoLeft);
+	$('<div>').addClass('link').append($('<a>').attr({'href': link, 'target': '_blank'}).html(el.hostname)).appendTo(infoLeft);
 
 	var authorSection = $('<div>').addClass('author-section').appendTo(infoLeft);
 
@@ -84,7 +84,7 @@ function getTemplate(deviceType, offset, keyword){
 
 	        	if(json.records && json.records.length > 0){
 	        		$.each(json.records, function(index, r){
-	        			var card = new createTemplateCard('/template/'+slugify(r.fields["Name"]), r.fields["URL"], r.fields["Preview"], r.fields["Name"], '', './images/favicon.png', r.fields["Author"]+'<br/>iOS, MAC', r.fields["Price"]);
+	        			var card = new createTemplateCard('/template/'+slugify(r.fields["Name"]), r.fields["URL"], r.fields["Preview"], r.fields["Name"], '', '/images/profile.png', r.fields["Author"]+'<br/>iOS, MAC', r.fields["Price"]);
 	        			gallery.append(card).masonry( 'appended', card);
 	        		});
 
@@ -150,5 +150,13 @@ $(document).ready(function(){
 			getTemplate(deviceType, pageOffset, '');
 		}
 	});
+
+	if($('.preview-section').length > 0){
+		$('.preview-section').on('mouseenter', function(e){
+			$('.social').addClass('visible');
+		}).on('mouseleave', function(e){
+			$('.social').removeClass('visible');
+		});
+	}
 
 });

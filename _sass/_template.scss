@@ -1,7 +1,119 @@
-.template-gallery{
-	margin-bottom: 24px;
+.preview-section{
+	.template-gallery{
+		margin-left: auto;
+		margin-right: auto;
+
+		width: 80%;
+
+		.gallery-item{
+			margin: auto;
+			cursor: pointer;
+
+			border-radius: 8px;
+		}
+	}
+
+	.social {
+	    position: absolute;
+	    right: 13%;
+	    top: 16px;
+	    background: rgba(90, 90, 90, 0.9);
+	    padding: 6px 16px;
+	    z-index: 100;
+	    border-radius: 8px;
+	    transition: all 0.5s ease;
+	    opacity: 0;
+
+		.social-icon {
+			float: left;
+			line-height: 33px;
+			cursor: pointer;
+
+			&:first-child{
+				margin-right: 16px;
+			}
+		}
+
+		&.visible {
+			opacity: 1;
+		}
+	}
 }
 
-.template-title{
-	font-size: 24px;
+.template-detail{
+	$author-profile-width: 25px;
+	$author-profile-margin: 8px;
+
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+
+	.template-link{
+		margin-bottom: 16px;
+
+		a{
+			font-size: 12px;
+			font-weight: 300;
+			color: #B7B7B7;
+		}
+	}
+
+	.template-title{
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	.template-description{
+		font-size: 12px;
+		font-weight: 400;
+	}
+
+	.author-section{
+		.profile-picture img{
+			width: $author-profile-width;
+			height: $author-profile-width;
+
+			border-radius: 50%;
+			margin-right: $author-profile-margin;
+			margin-top: 3px;
+			float:left;
+		}
+
+		.author-text{
+			font-size: 11px;
+			// max-width: $section-width - $padding - $author-profile-width - $author-profile-margin;
+			float:left;
+		}
+	}
+
+	.template-left{
+		float:left;
+		margin-left: 8px;
+	}
+
+	.template-right {
+		float:right;
+		margin-right: 16px;
+		font-weight: 300;
+	}
+
+	.visit-link{
+		font-size: 22px;
+		padding: 8px 24px;
+		background-color: #EBEBEB;
+		border-radius: 24px;
+
+		position: absolute;
+		right: 8px;
+		bottom: 3px;
+
+		a {
+			color: #666;
+		}
+	}
+}
+
+.pswp{
+	z-index: 9999;
 }

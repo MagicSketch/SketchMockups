@@ -37,16 +37,16 @@ if [ "$option" = "all" ]; then
 		i=0
 
 		# Loop template array
-		while [ $i -lt $size ]    
+		while [ $i -lt $size ]
 		do
 			# Slugify template name, to be used in permalink
 			templateSlug=`jq -r --arg i $i '.records[$i | tonumber].fields.Name' dump.json | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z`
 
 			# Template json object
-		    templateJson=`jq --arg i $i --arg slug $templateSlug '{r: .records[$i | tonumber], s: $slug}' dump.json`
+		    templateJson=`jq --arg i $i --arg slug $templateSlug '{r: .records[$i | tonumber], s: $slug, host: .records[$i | tonumber].fields.URL | match("^http[s]?://([^/]*)")}' dump.json`
 
-		    # Compile template with template json
-		    pug -o ../template -O "$templateJson" -P page-content-template.pug
+		    # Compile template with template json, try -P without pre document space
+		    pug -o ../template -O "$templateJson" page-content-template.pug
 
 		    # Rename to slug name
 		    mv ../template/page-content-template.html "../template/$templateSlug.html"
@@ -63,9 +63,15 @@ if [ "$option" = "all" ]; then
 
 	done
 
-elif [ "$option" = "count" ]; then
-	# curl "https://api.airtable.com/v0/appUM5HKj3inWajQG/Device?view=Main%20View&fields%5B%5D=Name&fields%5B%5D=Template%20Count" \
-	# -H "Authorization: Bearer keyxNf62XhQELuU9x" > dump.json
+elif [ "$option" = "name" ]; then
+	echo "compile $2"
+fi
+
+if [ "$option" = "count" -o "$option" = "all" ];  then
+	echo "Updating menu..."
+
+	curl "https://api.airtable.com/v0/appUM5HKj3inWajQG/Device?view=Main%20View&fields%5B%5D=Name&fields%5B%5D=Template%20Count" \
+	-H "Authorization: Bearer keyxNf62XhQELuU9x" > dump.json
 
 	countJson=`jq -c '[foreach .records[] as $item ({}; setpath([ $item.fields.Name]; $item.fields["Template Count"])  | setpath(["All"]; .All + $item.fields["Template Count"]); .)] | .[length-1]' dump.json`
 
@@ -76,10 +82,8 @@ elif [ "$option" = "count" ]; then
 	# Rename to slug name
 	mv ../template/menu-count.html "../_includes/menu.html"
 
-	echo "Menu count is updated!"
-
-elif [ "$option" = "name" ]; then
-	echo "compile $2"
+	echo "Site left menu is updated!"
 fi
+
 
 echo "Done."
