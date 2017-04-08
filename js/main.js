@@ -235,4 +235,8 @@ $(document).ready(function(){
         vimeoInit($('#movie-container'), 'embedVideo');
     }
 
+    if($(window).width() < 992){
+		inMobile = true;
+	}
+
 });
