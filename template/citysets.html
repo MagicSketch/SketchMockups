@@ -1,8 +1,12 @@
 ---
 title: 8 Isolated iPhone 6s mockups
 permalink: /template/citysets/
+title: CitySets
+image: https://dl.airtable.com/bsK4JN7QQmiuIWNf2BNp_sydney-icons-1.svg
 ---
- <script type="text/javascript">var galleryItems = [];
+ 
+{% assign siteUrl = site.settings[jekyll.environment].url %}
+<script type="text/javascript">var galleryItems = [];
 function constructGalleryItem(){
 	var dom = $('.gallery-item');
 	$.each(dom, function(index, img){
@@ -75,10 +79,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social">
-<div class="social-icon"><img src="/images/twitter.svg" /></div>
-<div class="social-icon"><img src="/images/facebook.svg" /></div>
-<div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'CitySets #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'CitySets #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/bsK4JN7QQmiuIWNf2BNp_sydney-icons-1.svg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/zOklkdqwRE2WwAycYlCs_paris-icons.svg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/bDrZSVpeQLWDcDMuf0CX_newyork-icons.svg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/MPPs9BpUTtaFPItShyj8_london-icons.svg"/></div></div>
 </div>
@@ -89,9 +90,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="http://citysets.co.uk" target="_blank">citysets.co.uk</a></div>
 <div class="author-section">
-<div class="profile-picture">
-<img src="/images/profile.png">
-</div>
+<div class="profile-picture"><img src="/images/profile.png" /></div>
 <div class="author-text">Bryn Taylor<br>iOS, MAC
 </div>
 </div>

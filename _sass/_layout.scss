@@ -277,6 +277,10 @@
     padding: 6px 10px;
 
     margin-left: 22px;
+
+    @include media-query($on-laptop) {
+        margin-left: 0px;
+    }
 }
 
 // Search bar
@@ -322,8 +326,52 @@
     .mobile-how-to-use{
         margin-top:20px;
         margin-bottom: 20px;
+        display:none;
 
         text-align: center;
+
+        @include media-query($on-md) {
+            display: block;
+        }
+
+        span{
+            @include media-query($on-laptop) {
+                margin-bottom: 16px;
+            }
+        }
     }
 
+}
+
+
+// Plain layout
+.plain-content{
+    text-align: center;
+    color: #333;
+
+    .section-title{
+        margin-top: 40px;
+        margin-bottom: 32px;
+        font-size: 32px;
+    }
+
+    .section-paragraph{
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 44px;
+
+        a {
+            color: $p-link-color;
+        }
+
+        &.p-wrap{
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    }
+
+    .section-movie{
+        margin-bottom: 44px;
+    }
 }

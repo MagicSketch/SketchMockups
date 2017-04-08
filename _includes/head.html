@@ -6,13 +6,7 @@
 	{% assign siteUrl = site.settings[jekyll.environment].url %}
 
 	{% if page.title %}
-		{% if page.is_template %}
-			{% capture title %}{{ page.title }} · Sketch Perspective Mockup{% endcapture %}
-		{% else %}
-			{% capture title %}{{ page.title }} · {{ site[page.app].title }}{% endcapture %}
-		{% endif %}
-	{% elsif page.app %}
-		{% assign title = site[page.app].title %}
+		{% capture title %}{{ page.title }} · {{ site.title }}{% endcapture %}
 	{% else %}
 		{% assign title = site.title %}
 	{% endif %}
@@ -26,28 +20,20 @@
 	{% endif %}
 
 	{% if page.image %}
-		{% if page.is_template %}
-			{% capture image %}{{ siteUrl }}/mirror/images/templates/{{ page.image }}{% endcapture %}
-		{% else %}
-			{% capture image %}{{ siteUrl }}{{ page.image }}{% endcapture %}
-		{% endif %}
+		{% capture image %}{{ page.image }}{% endcapture %}
+		{% capture twitter_image %}{{ page.image }}{% endcapture %}
 	{% elsif page.yt_id %}
 		{% capture image %}http://img.youtube.com/vi/{{ page.yt_id }}/0.jpg{% endcapture %}
 	{% else %}
-		{% capture image %}{{ siteUrl }}{{ site[page.app].share.image }}{% endcapture %}
+		{% capture image %}{{ siteUrl }}{{ site.share.image }}{% endcapture %}
+		{% capture twitter_image %}{{ siteUrl }}{{ site.share.twitter_image }}{% endcapture %}
 		{% assign image_width = 1200 %}
 		{% assign image_height = 630 %}
 	{% endif %}
 
-	{% if page.twitter_image %}
-		{% capture twitter_image %}{{ siteUrl }}{{ page.twitter_image }}{% endcapture %}
-	{% else %}
-		{% capture twitter_image %}{{ siteUrl }}{{ site[page.app].share.twitter_image }}{% endcapture %}
-	{% endif %}
 
-
-	{% if site[page.app].keywords %}
-	<meta name="keywords" content="{{ site[page.app].keywords }}">
+	{% if site.keywords %}
+	<meta name="keywords" content="{{ site.keywords }}">
 	{% else %}
 	<meta name="keywords" content="perspective,mockup,sketch,plugin,transform,smart objects,photoshop,alternative,magic mirror,artboard">
 	{% endif %}
@@ -56,7 +42,7 @@
 
 
 	<meta name="author" content="{{ site.author }}">
-	<meta name="description" content="{{ site.landing.description }}">
+	<meta name="description" content="{{ site.description }}">
 
 	<meta property="og:title" content="{{ title }}">
 	<meta property="og:site_name" content="{{ title }}">
@@ -100,7 +86,6 @@
 	
 	<script>
 		var page = {};
-		var gatewayUrl = "{{ site.settings[jekyll.environment].apigateway_url }}";
 		var env = "{{ jekyll.environment }}";
 	</script>
 

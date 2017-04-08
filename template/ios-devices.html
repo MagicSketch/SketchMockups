@@ -1,8 +1,12 @@
 ---
 title: 8 Isolated iPhone 6s mockups
 permalink: /template/ios-devices/
+title: iOS Devices
+image: https://dl.airtable.com/BaW2EtzFQtGLYuii1Rkr_http---mashable.com-wp-content-gallery-essential-sketch-resources-sketchios.jpg
 ---
- <script type="text/javascript">var galleryItems = [];
+ 
+{% assign siteUrl = site.settings[jekyll.environment].url %}
+<script type="text/javascript">var galleryItems = [];
 function constructGalleryItem(){
 	var dom = $('.gallery-item');
 	$.each(dom, function(index, img){
@@ -75,10 +79,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social">
-<div class="social-icon"><img src="/images/twitter.svg" /></div>
-<div class="social-icon"><img src="/images/facebook.svg" /></div>
-<div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'iOS Devices #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'iOS Devices #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/BaW2EtzFQtGLYuii1Rkr_http---mashable.com-wp-content-gallery-essential-sketch-resources-sketchios.jpg"/></div></div>
 </div>
@@ -89,9 +90,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="http://robbiepearce.com/devices" target="_blank">robbiepearce.com</a></div>
 <div class="author-section">
-<div class="profile-picture">
-<img src="/images/profile.png">
-</div>
+<div class="profile-picture"><img src="/images/profile.png" /></div>
 <div class="author-text">Robbie Pearce<br>iOS, MAC
 </div>
 </div>

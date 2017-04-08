@@ -2,9 +2,81 @@ var gallery = null;
 var pageOffset = '';
 var isLoading = false;
 var tierList = [0, 5.99, 19.99];
+var inMobile = false;
 
-function slugify(text)
-{
+function vimeoInit(target, callback) {
+	// This is the URL of the video you want to load
+	var videoUrl = target.attr('src');
+	// This is the oEmbed endpoint for Vimeo (we're using JSON)
+	// (Vimeo also supports oEmbed discovery. See the PHP example.)
+	var endpoint = 'https://www.vimeo.com/api/oembed.json';
+	// Put together the URL
+	var url = endpoint + '?url=' + encodeURIComponent(videoUrl) + '&callback=' + callback + (inMobile?'':'&width=780&height=550');
+	// This function puts the video on the page
+
+    var js = document.createElement('script');
+    js.setAttribute('type', 'text/javascript');
+    js.setAttribute('src', url);
+    document.getElementsByTagName('head').item(0).appendChild(js);
+
+    var vimeoAPI = document.createElement('script');
+    vimeoAPI.setAttribute('type', 'text/javascript');
+    vimeoAPI.setAttribute('src', "https://player.vimeo.com/api/player.js");
+    document.getElementsByTagName('head').item(0).appendChild(vimeoAPI);
+}
+
+function embedVideo(video) {
+    document.getElementById('movie-container').innerHTML = unescape(video.html);
+
+    var iframe = $('#movie-container iframe')[0];
+    var player = new Vimeo.Player(iframe);
+
+    player.on('play', function(d) {
+        var currentTime = d.seconds;
+        // ga('send', 'event', 'Mirror Video', 'Played the Index Video', "played:"+currentTime);
+        // analytics.track('Played the Index Video',{
+        //     type: 'played',
+        //     videoTime: currentTime,
+        // });
+    });
+
+    player.on('pause', function(d) {
+        var currentTime = d.seconds;
+        // ga('send', 'event', 'Mirror Video', 'Paused the Index Video', "paused:"+currentTime);
+        // analytics.track('Paused the Index Video',{
+        //     type: 'paused',
+        //     videoTime: currentTime,
+        // });
+    });
+
+    player.on('ended', function(d) {
+        // analytics.track('Played the entire Magic Mirror index video');
+        // ga('send', 'event', 'Mirror Video', 'Played the entire index video');
+    });
+
+    player.on('seeked', function(d) {
+        var currentTime = d.seconds;
+        // ga('send', 'event', 'Mirror Video', 'Seeked the Index Video', "seeked:"+currentTime);
+        // analytics.track('Seeked the Index Video',{
+        //     type: 'seeked',
+        //     videoTime: currentTime,
+        // });
+    });
+}
+
+function twitterShare(link, text){
+	// ga('send', 'event', 'Share', 'Twitter share clicked', window.location.href);
+	// analytics.track('Twitter share clicked');
+	window.open("https://twitter.com/intent/tweet?link="+link+"&original_referer="+link+"&text="+text.replace(/\<br\>/g, "%0A"), "share", "width=640,height=443");
+}
+
+function facebookShare(link, text){
+	// ga('send', 'event', 'Share', 'Facebook share clicked', window.location.href);
+	// analytics.track('Facebook share clicked');
+	window.open("http://www.facebook.com/sharer/sharer.php?u="+link, "share", "width=640,height=443");
+}
+
+function slugify(text){
   return text.toString().toLowerCase()
     .replace(/\s+/g, '-')           // Replace spaces with -
     .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
@@ -158,5 +230,9 @@ $(document).ready(function(){
 			$('.social').removeClass('visible');
 		});
 	}
+
+	if($('#movie-container').length > 0){
+        vimeoInit($('#movie-container'), 'embedVideo');
+    }
 
 });

@@ -1,8 +1,12 @@
 ---
 title: 8 Isolated iPhone 6s mockups
 permalink: /template/free-iphone-7-silver-mockup/
+title: Free iPhone 7 Silver mockup
+image: https://dl.airtable.com/lFbRBHsRQFSWDV5vk2oG_iphone7silverpreview_dribbble-shot__1x.jpg
 ---
- <script type="text/javascript">var galleryItems = [];
+ 
+{% assign siteUrl = site.settings[jekyll.environment].url %}
+<script type="text/javascript">var galleryItems = [];
 function constructGalleryItem(){
 	var dom = $('.gallery-item');
 	$.each(dom, function(index, img){
@@ -75,10 +79,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social">
-<div class="social-icon"><img src="/images/twitter.svg" /></div>
-<div class="social-icon"><img src="/images/facebook.svg" /></div>
-<div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'Free iPhone 7 Silver mockup #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'Free iPhone 7 Silver mockup #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/lFbRBHsRQFSWDV5vk2oG_iphone7silverpreview_dribbble-shot__1x.jpg"/></div></div>
 </div>
@@ -89,9 +90,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="https://dribbble.com/shots/3324145-Free-iPhone-7-Silver-mockup" target="_blank">dribbble.com</a></div>
 <div class="author-section">
-<div class="profile-picture">
-<img src="/images/profile.png">
-</div>
+<div class="profile-picture"><img src="https://dl.airtable.com/pmKsX9ETRX278iyC6HSC_360%20mockup.jpg"/></div>
 <div class="author-text">360 Mockups<br>iOS, MAC
 </div>
 </div>

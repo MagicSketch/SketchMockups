@@ -3,9 +3,16 @@
 | permalink: /template/
 = s + '/'
 |
+| title: 
+= r.fields.Name.replace(/:/g, '')
+|
+| image: 
+= r.fields.Preview[0].url
+|
 | ---
 | 
-
+| {% assign siteUrl = site.settings[jekyll.environment].url %}
+|
 script(type="text/javascript").
 	var galleryItems = [];
 	function constructGalleryItem(){
@@ -83,8 +90,12 @@ script(type="text/javascript").
 
 <div class="preview-section">
 	<div class="social">
-		<div class="social-icon"><img src="/images/twitter.svg" /></div>
-		<div class="social-icon"><img src="/images/facebook.svg" /></div>
+		div(class="social-icon", onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '"+r.fields.Name+" #Sketchmockups')")
+			<img src="/images/twitter.svg" />
+
+		div(class="social-icon", onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '"+r.fields.Name+" #Sketchmockups')")
+			<img src="/images/facebook.svg" />
+
 		<div class="clearfix"></div>
 	</div>
 	<div class="template-gallery">
@@ -107,7 +118,10 @@ script(type="text/javascript").
 		</div>
 		<div class="author-section">
 			<div class="profile-picture">
-				<img src="/images/profile.png">
+				if r.fields.Avatar
+					img(src=r.fields.Avatar[0].url)
+				else
+					<img src="/images/profile.png" />
 			</div>
 			<div class="author-text">
 			= r.fields.Author
@@ -116,7 +130,12 @@ script(type="text/javascript").
 		</div>
 	</div>
 	if r.fields.Price
-		<div class="template-right price">$$$</div>
+		if r.fields.Price > 19.99
+			<div class="template-right price"><span class="price-light-text">$$$</span></div>
+		else if r.fields.Price > 5.99
+			<div class="template-right price"><span class="price-light-text">$$</span><span class="price-dim-text">$</span></div>
+		else
+			<div class="template-right price"><span class="price-light-text">$</span><span class="price-dim-text">$$</span></div>
 	else
 		<div class="template-right free">Free</div>
 

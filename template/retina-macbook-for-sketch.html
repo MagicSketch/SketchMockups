@@ -1,8 +1,12 @@
 ---
 title: 8 Isolated iPhone 6s mockups
 permalink: /template/retina-macbook-for-sketch/
+title: Retina MacBook for Sketch
+image: https://dl.airtable.com/rDxICIRCQcmdjGnTSEZk_macbook_pro_with_retina_display_1x.jpg
 ---
- <script type="text/javascript">var galleryItems = [];
+ 
+{% assign siteUrl = site.settings[jekyll.environment].url %}
+<script type="text/javascript">var galleryItems = [];
 function constructGalleryItem(){
 	var dom = $('.gallery-item');
 	$.each(dom, function(index, img){
@@ -75,10 +79,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social">
-<div class="social-icon"><img src="/images/twitter.svg" /></div>
-<div class="social-icon"><img src="/images/facebook.svg" /></div>
-<div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'Retina MacBook for Sketch #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'Retina MacBook for Sketch #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/rDxICIRCQcmdjGnTSEZk_macbook_pro_with_retina_display_1x.jpg"/></div></div>
 </div>
@@ -89,9 +90,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="https://dribbble.com/shots/998900-Retina-MacBook-for-Sketch" target="_blank">dribbble.com</a></div>
 <div class="author-section">
-<div class="profile-picture">
-<img src="/images/profile.png">
-</div>
+<div class="profile-picture"><img src="/images/profile.png" /></div>
 <div class="author-text">Seb Jachec<br>iOS, MAC
 </div>
 </div>

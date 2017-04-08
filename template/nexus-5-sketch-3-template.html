@@ -1,8 +1,12 @@
 ---
 title: 8 Isolated iPhone 6s mockups
 permalink: /template/nexus-5-sketch-3-template/
+title: Nexus 5 Sketch 3 Template
+image: https://dl.airtable.com/ZazL5s5LQqCC7cf7qXhX_nexus-5-sketch-template-w.png
 ---
- <script type="text/javascript">var galleryItems = [];
+ 
+{% assign siteUrl = site.settings[jekyll.environment].url %}
+<script type="text/javascript">var galleryItems = [];
 function constructGalleryItem(){
 	var dom = $('.gallery-item');
 	$.each(dom, function(index, img){
@@ -75,10 +79,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social">
-<div class="social-icon"><img src="/images/twitter.svg" /></div>
-<div class="social-icon"><img src="/images/facebook.svg" /></div>
-<div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'Nexus 5 Sketch 3 Template #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'Nexus 5 Sketch 3 Template #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/ZazL5s5LQqCC7cf7qXhX_nexus-5-sketch-template-w.png"/></div></div>
 </div>
@@ -89,9 +90,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="http://tristanremy.com/nexus-5/" target="_blank">tristanremy.com</a></div>
 <div class="author-section">
-<div class="profile-picture">
-<img src="/images/profile.png">
-</div>
+<div class="profile-picture"><img src="https://dl.airtable.com/HGcicywSwyaBrA8TsdGI_sK7uVwjG_200x200.jpg"/></div>
 <div class="author-text">Tristan Remy<br>iOS, MAC
 </div>
 </div>

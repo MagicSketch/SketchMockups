@@ -135,16 +135,16 @@ $masonry-width: 236px;
 		&.price {
 			color: #333;
 		}
-
-		.price-light-text{
-			color: #ffd52f;
-		}
-
-		.price-dim-text{
-			color: #B7B7B7;
-		}
 	}
 }
+.price-light-text{
+	color: #ffd52f;
+}
+
+.price-dim-text{
+	color: #B7B7B7;
+}
+
 .grid-item--width2 { width: 400px; }
 
 // Loader css

@@ -1,8 +1,12 @@
 ---
 title: 8 Isolated iPhone 6s mockups
 permalink: /template/mockup-hands-with-iphone-just-the-iphone-7-/
+title: Mockup Hands with iPhone (just the iphone 7)
+image: https://dl.airtable.com/U8GNlqpwRzSFT0itWVZx_female-male-hand-iphone-samsung.png
 ---
- <script type="text/javascript">var galleryItems = [];
+ 
+{% assign siteUrl = site.settings[jekyll.environment].url %}
+<script type="text/javascript">var galleryItems = [];
 function constructGalleryItem(){
 	var dom = $('.gallery-item');
 	$.each(dom, function(index, img){
@@ -75,10 +79,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social">
-<div class="social-icon"><img src="/images/twitter.svg" /></div>
-<div class="social-icon"><img src="/images/facebook.svg" /></div>
-<div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'Mockup Hands with iPhone (just the iphone 7) #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'Mockup Hands with iPhone (just the iphone 7) #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/U8GNlqpwRzSFT0itWVZx_female-male-hand-iphone-samsung.png"/></div></div>
 </div>
@@ -89,9 +90,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="https://www.sketchappsources.com/free-source/2443-female-male-hand-iphone-samsung-sketch-freebie-resource.html" target="_blank">www.sketchappsources.com</a></div>
 <div class="author-section">
-<div class="profile-picture">
-<img src="/images/profile.png">
-</div>
+<div class="profile-picture"><img src="https://dl.airtable.com/aj29gv4yQkafe2e9HsjG_Xet12MLu_400x400.jpg"/></div>
 <div class="author-text"> Tanya Mau<br>iOS, MAC
 </div>
 </div>
