@@ -25,7 +25,8 @@ function openGallery(index){
 	var options = {
 		index: index,
 		showHideOpacity: true,
-		bgOpacity: 0.95
+		bgOpacity: 0.95,
+		shareButtons: [{id:'download', label:'Download image', url:'apple-iphone-6-vector-shape', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 	gallery.init();
@@ -79,7 +80,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'Apple iPhone 6 Vector Shape #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'Apple iPhone 6 Vector Shape #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;Apple iPhone 6 Vector Shape&quot; By: Norman Posselt | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;Apple iPhone 6 Vector Shape&quot; By: Norman Posselt | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/LTWZS4ePSfuhEUoEQLuX_54eaba24-774a-4dad-a1dc-9bf1e02ef7d6.jpg"/></div></div>
 </div>

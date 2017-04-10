@@ -25,7 +25,8 @@ function openGallery(index){
 	var options = {
 		index: index,
 		showHideOpacity: true,
-		bgOpacity: 0.95
+		bgOpacity: 0.95,
+		shareButtons: [{id:'download', label:'Download image', url:'hero-iphone-7-mockups', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 	gallery.init();
@@ -79,7 +80,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'HERO iPhone 7 Mockups #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'HERO iPhone 7 Mockups #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;HERO iPhone 7 Mockups&quot; By: @GetCraftwork | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;HERO iPhone 7 Mockups&quot; By: @GetCraftwork | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/LPwonKxGQPqhUQnzWwWR_fsoqsemspm5ougqae5te.jpg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/F5QbEGdjRumhbybFMVpK_b8ioib5eycka6czgrzr2.jpg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/gPBAitFkS42frncYcQq5_mkchyie0mnqgiutlqyzb.jpg"/></div></div>
 </div>

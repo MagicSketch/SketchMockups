@@ -25,7 +25,8 @@ function openGallery(index){
 	var options = {
 		index: index,
 		showHideOpacity: true,
-		bgOpacity: 0.95
+		bgOpacity: 0.95,
+		shareButtons: [{id:'download', label:'Download image', url:'200-devices-mockups-for-sketch', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 	gallery.init();
@@ -79,7 +80,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '200 DEVICES &amp; MOCKUPS FOR SKETCH #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '200 DEVICES &amp; MOCKUPS FOR SKETCH #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;200 DEVICES &amp; MOCKUPS FOR SKETCH&quot; By: Meng To | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;200 DEVICES &amp; MOCKUPS FOR SKETCH&quot; By: Meng To | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/U0WB9Jf8S720ZkIjGYK1_mockups-watch.png"/></div><div><img class="gallery-item" src="https://dl.airtable.com/w34ggSmvRc29LzNMVTsA_comp01.jpg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/LZB1zRjySqCdA8ZugqY9_comp03.jpg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/eokM6Vn9R5aX2ioGzedt_comp02.jpg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/oqD0NGF3Q62AFEalOKg4_comp05.jpg"/></div></div>
 </div>

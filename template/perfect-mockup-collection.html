@@ -25,7 +25,8 @@ function openGallery(index){
 	var options = {
 		index: index,
 		showHideOpacity: true,
-		bgOpacity: 0.95
+		bgOpacity: 0.95,
+		shareButtons: [{id:'download', label:'Download image', url:'perfect-mockup-collection', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 	gallery.init();
@@ -79,7 +80,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'Perfect Mockup Collection #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'Perfect Mockup Collection #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;Perfect Mockup Collection&quot; By: @lstore_graphics | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;Perfect Mockup Collection&quot; By: @lstore_graphics | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/ZyB8WBWTsule0WCHAlGv_upload-7cf69db0-c50a-11e5-9ae0-79ddbaff4163.jpg"/></div><div><img class="gallery-item" src="https://dl.airtable.com/J0DHvI91TASP5EqXvTeE_upload-ba9cb550-7293-11e6-8ae9-2d25f13422d2.png"/></div><div><img class="gallery-item" src="https://dl.airtable.com/WcsreCTjK1CGQ9rZ0oFw_upload-d805fe20-728f-11e6-8cc1-b30fc75b6a51.jpg"/></div></div>
 </div>

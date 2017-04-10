@@ -25,7 +25,8 @@ function openGallery(index){
 	var options = {
 		index: index,
 		showHideOpacity: true,
-		bgOpacity: 0.95
+		bgOpacity: 0.95,
+		shareButtons: [{id:'download', label:'Download image', url:'simple-iphone-6-6-for-sketch', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 	gallery.init();
@@ -79,7 +80,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'Simple iPhone 6/6+ for Sketch #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'Simple iPhone 6/6+ for Sketch #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;Simple iPhone 6/6+ for Sketch&quot; By: @jonrundle | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;Simple iPhone 6/6+ for Sketch&quot; By: @jonrundle | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/44TUHE5WQ1u17zTw0c8m_simple-iphone6_1x.png"/></div></div>
 </div>
@@ -90,7 +91,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="https://dribbble.com/shots/1754040-Simple-iPhone-6-6-for-Sketch" target="_blank">dribbble.com</a></div>
 <div class="author-section">
-<div class="profile-picture"><img src="/images/profile.png" /></div>
+<div class="profile-picture"><img src="https://dl.airtable.com/iAhAISypRBqsNDm8hiuU_jz_GKINA_400x400.jpg"/></div>
 <div class="author-text">Jon Rundle<br>iOS, MAC
 </div>
 </div>

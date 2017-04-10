@@ -25,7 +25,8 @@ function openGallery(index){
 	var options = {
 		index: index,
 		showHideOpacity: true,
-		bgOpacity: 0.95
+		bgOpacity: 0.95,
+		shareButtons: [{id:'download', label:'Download image', url:'magicmirror', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 	gallery.init();
@@ -79,7 +80,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'MagicMirror #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'MagicMirror #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;MagicMirror&quot; By: @EmilieBADIN | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;MagicMirror&quot; By: @EmilieBADIN | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/vPxvNShRKCdW7PvhCuxm_magicmirror4_2x_1x.png"/></div></div>
 </div>
@@ -90,7 +91,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="https://dribbble.com/shots/2670117-FREEBIE-MagicMirror" target="_blank">dribbble.com</a></div>
 <div class="author-section">
-<div class="profile-picture"><img src="/images/profile.png" /></div>
+<div class="profile-picture"><img src="https://dl.airtable.com/bEA1rDLTj69dSiEsytXv_oWTctEHc_400x400.jpg"/></div>
 <div class="author-text">emilie badin<br>iOS, MAC
 </div>
 </div>

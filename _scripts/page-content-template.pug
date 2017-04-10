@@ -33,7 +33,8 @@ script(type="text/javascript").
 		var options = {
 			index: index,
 			showHideOpacity: true,
-			bgOpacity: 0.95
+			bgOpacity: 0.95,
+			shareButtons: [{id:'download', label:'Download image', url:'#{s}', download:true}],
 		};
 		var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 		gallery.init();
@@ -90,10 +91,10 @@ script(type="text/javascript").
 
 <div class="preview-section">
 	<div class="social">
-		div(class="social-icon", onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '"+r.fields.Name+" #Sketchmockups')")
+		div(class="social-icon", onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '\""+r.fields.Name+"\" By: "+(r.fields["Author's twitter handle (if any)"]?r.fields["Author's twitter handle (if any)"]:r.fields.Author)+" | Sketchmockups {{ siteUrl }}{{ page.url }}')")
 			<img src="/images/twitter.svg" />
 
-		div(class="social-icon", onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '"+r.fields.Name+" #Sketchmockups')")
+		div(class="social-icon", onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '\""+r.fields.Name+"\" By: "+(r.fields["Author's twitter handle (if any)"]?r.fields["Author's twitter handle (if any)"]:r.fields.Author)+" | Sketchmockups {{ siteUrl }}{{ page.url }}')")
 			<img src="/images/facebook.svg" />
 
 		<div class="clearfix"></div>

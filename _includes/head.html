@@ -16,7 +16,7 @@
 	{% elsif page.excerpt %}
 		{% assign description = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
 	{% else %}
-		{% assign description = site[page.app].description %}
+		{% assign description = site.description %}
 	{% endif %}
 
 	{% if page.image %}

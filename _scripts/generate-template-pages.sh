@@ -13,7 +13,7 @@ if [ "$option" = "all" ]; then
 		echo "Loading template page $page."
 
 		# Query parameter to Airtable
-		offsetQuery="pageSize=100&view=Main%20View"
+		offsetQuery="pageSize=100&view=Approved"
 
 		# Specify offset if any
 		if [ ! "$offset" = "null" ] && [ $page -gt 1 ]; then
