@@ -15,7 +15,7 @@ jq (shell json parser):
 Reference:
 https://stedolan.github.io/jq/
 
-# Generate script
+# Template generating script
 cd `_scripts`
 
 Generate all templates:
