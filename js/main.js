@@ -67,10 +67,12 @@ function embedVideo(video) {
 function twitterShare(link, text){
 	// ga('send', 'event', 'Share', 'Twitter share clicked', window.location.href);
 	// analytics.track('Twitter share clicked');
-	// var formattedText = encodeURI(text.replace(/\<br\>/g, "%0A"));
-	var wtf = text.replace(/\<br\>/g, "%0A");
-	// window.open("https://twitter.com/intent/tweet?link="+link+"&original_referer="+link+"&text="+formattedText, "share", "width=640,height=443");
-	window.open("https://twitter.com/intent/tweet?link="+link+"&original_referer="+link+"&text="+wtf, "share", "width=640,height=443");
+	var formattedText = encodeURI(text.replace(/\<br\>/g, "%0A"));
+	window.open("https://twitter.com/intent/tweet?link="+link+"&original_referer="+link+"&text="+formattedText, "share", "width=640,height=443");
+}
+
+function wtf(){
+	
 }
 
 function facebookShare(link, text){
