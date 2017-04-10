@@ -67,8 +67,8 @@ function embedVideo(video) {
 function twitterShare(link, text){
 	// ga('send', 'event', 'Share', 'Twitter share clicked', window.location.href);
 	// analytics.track('Twitter share clicked');
-	// come on??
-	window.open("https://twitter.com/intent/tweet?link="+link+"&original_referer="+link+"&text="+encodeURI(text.replace(/\<br\>/g, "%0A")), "share", "width=640,height=443");
+	var formattedText = encodeURI(text.replace(/\<br\>/g, "%0A"));
+	window.open("https://twitter.com/intent/tweet?link="+link+"&original_referer="+link+"&text="+formattedText, "share", "width=640,height=443");
 }
 
 function facebookShare(link, text){
