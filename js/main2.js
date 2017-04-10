@@ -71,10 +71,6 @@ function twitterShare(link, text){
 	window.open("https://twitter.com/intent/tweet?link="+link+"&original_referer="+link+"&text="+formattedText, "share", "width=640,height=443");
 }
 
-function wtf(){
-	
-}
-
 function facebookShare(link, text){
 	// ga('send', 'event', 'Share', 'Facebook share clicked', window.location.href);
 	// analytics.track('Facebook share clicked');
