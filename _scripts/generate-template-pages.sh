@@ -73,7 +73,7 @@ elif [ "$option" = "name" ]; then
 	-G \
 	--data-urlencode "pageSize=100" \
 	--data-urlencode "view=Approved" \
-	--data-urlencode "filterByFormula=FIND(\"$2\",{NAME})!=0" \
+	--data-urlencode "filterByFormula=FIND(LOWER(\"$2\"),LOWER({NAME}))!=0" \
 	-H "Authorization: Bearer keyxNf62XhQELuU9x" > dump.json
 
 	# Get template count
