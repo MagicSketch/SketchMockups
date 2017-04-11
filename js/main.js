@@ -1,5 +1,6 @@
 var gallery = null;
 var pageOffset = '';
+var searchKeyword = '';
 var isLoading = false;
 var tierList = [0, 5.99, 19.99];
 var inMobile = false;
@@ -137,15 +138,24 @@ function createTemplateCard(link, extLink, images, title, description, profileUr
 	return row;
 }
 
-function getTemplate(deviceType, offset, keyword){
+function getTemplate(deviceType, offset, reset){
 	var container = $('#templateContainer');
+
+	if(reset){
+		$.each($('.grid-item'), function(i, g){
+			gallery.masonry('remove', g);
+		});
+
+		gallery.masonry('layout');
+	}
 
 	if(pageOffset != 'END'){
 		isLoading = true;
+		keywordFilter = '';
 		$('#imgLoader').show();
 
 		$.ajax({
-	        url: 'https://api.magicsketch.io/r/get_web_template?device='+deviceType+'&offset='+offset,
+	        url: 'https://api.magicsketch.io/r/get_web_template?device='+deviceType+'&offset='+offset+'&keyword='+searchKeyword,
 	        method: "GET",
 	        dataType: "json",
 	        complete: function(json){
@@ -213,14 +223,15 @@ $(document).ready(function(){
             $('.search-input').val(box.val());
 
             pageOffset = '';
+            searchKeyword = box.val();
             
-            getTemplate(deviceType, pageOffset, box.val());
+            getTemplate(deviceType, pageOffset, true);
         }
     });
 
 	$(window).scroll(function() {
 		if($(window).scrollTop() + $(window).height() > $(document).height() - 100 && !isLoading) {
-			getTemplate(deviceType, pageOffset, '');
+			getTemplate(deviceType, pageOffset);
 		}
 	});
 
