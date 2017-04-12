@@ -4,6 +4,7 @@ var searchKeyword = '';
 var isLoading = false;
 var tierList = [0, 5.99, 19.99];
 var inMobile = false;
+var currentPage = 1;
 
 function vimeoInit(target, callback) {
 	// This is the URL of the video you want to load
@@ -34,30 +35,22 @@ function embedVideo(video) {
 
     player.on('play', function(d) {
         var currentTime = d.seconds;
-        // ga('send', 'event', 'Mirror Video', 'Played the Index Video', "played:"+currentTime);
-        // analytics.track('Played the Index Video',{
-        //     type: 'played',
-        //     videoTime: currentTime,
-        // });
+        ga('send', 'event', 'How to use Video', 'Played the how to use Video', "played:"+currentTime);
     });
 
     player.on('pause', function(d) {
         var currentTime = d.seconds;
-        // ga('send', 'event', 'Mirror Video', 'Paused the Index Video', "paused:"+currentTime);
-        // analytics.track('Paused the Index Video',{
-        //     type: 'paused',
-        //     videoTime: currentTime,
-        // });
+        ga('send', 'event', 'How to use Video', 'Paused the how to use Video', "paused:"+currentTime);
     });
 
     player.on('ended', function(d) {
         // analytics.track('Played the entire Magic Mirror index video');
-        // ga('send', 'event', 'Mirror Video', 'Played the entire index video');
+        ga('send', 'event', 'How to use Video', 'Played the entire how to use video');
     });
 
     player.on('seeked', function(d) {
         var currentTime = d.seconds;
-        // ga('send', 'event', 'Mirror Video', 'Seeked the Index Video', "seeked:"+currentTime);
+        ga('send', 'event', 'How to use Video', 'Seeked the how to use Video', "seeked:"+currentTime);
         // analytics.track('Seeked the Index Video',{
         //     type: 'seeked',
         //     videoTime: currentTime,
@@ -66,14 +59,14 @@ function embedVideo(video) {
 }
 
 function twitterShare(link, text){
-	// ga('send', 'event', 'Share', 'Twitter share clicked', window.location.href);
+	ga('send', 'event', 'Share', 'Twitter share clicked', window.location.href);
 	// analytics.track('Twitter share clicked');
 	var formattedText = encodeURI(text.replace(/\<br\>/g, "%0A"));
 	window.open("https://twitter.com/intent/tweet?link="+link+"&original_referer="+link+"&text="+formattedText, "share", "width=640,height=443");
 }
 
 function facebookShare(link, text){
-	// ga('send', 'event', 'Share', 'Facebook share clicked', window.location.href);
+	ga('send', 'event', 'Share', 'Facebook share clicked', window.location.href);
 	// analytics.track('Facebook share clicked');
 	window.open("http://www.facebook.com/sharer/sharer.php?u="+link, "share", "width=640,height=443");
 }
@@ -142,6 +135,7 @@ function getTemplate(deviceType, offset, reset){
 	var container = $('#templateContainer');
 
 	if(reset){
+		currentPage = 1;
 		$.each($('.grid-item'), function(i, g){
 			gallery.masonry('remove', g);
 		});
@@ -149,9 +143,10 @@ function getTemplate(deviceType, offset, reset){
 		gallery.masonry('layout');
 	}
 
+	ga('send', 'event', 'Load template lists', 'Template list', (searchKeyword || '')+currentPage);
+
 	if(pageOffset != 'END'){
 		isLoading = true;
-		keywordFilter = '';
 		$('#imgLoader').show();
 
 		$.ajax({
@@ -166,6 +161,8 @@ function getTemplate(deviceType, offset, reset){
 	        	pageOffset = json.offset || 'END';
 
 	        	if(json.records && json.records.length > 0){
+	        		currentPage++;
+	        		
 	        		$.each(json.records, function(index, r){
 	        			var card = new createTemplateCard('/template/'+slugify(r.fields["Name"]), r.fields["URL"], r.fields["Preview"], r.fields["Name"], '', '/images/profile.png', r.fields["Author"]+'<br/>iOS, MAC', r.fields["Price"]);
 	        			gallery.append(card).masonry( 'appended', card);
