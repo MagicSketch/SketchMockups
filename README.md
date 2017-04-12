@@ -33,3 +33,7 @@ Generate a specified template:
 
 Example: 
 `./generate-template-pages.sh name "8 isolate"`
+
+
+Generate template in a view:
+`./generate-template-pages.sh view Approved``
