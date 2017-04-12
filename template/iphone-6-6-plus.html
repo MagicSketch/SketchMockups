@@ -18,6 +18,7 @@ function constructGalleryItem(){
 	});
 }
 function openGallery(index){
+	ga('send', 'event', 'Template gallery clicked', 'iPhone 6 &amp; 6 Plus');
 	var pswpElement = document.querySelectorAll('.pswp')[0];
 	if(galleryItems.length == 0){
 		constructGalleryItem();
@@ -29,12 +30,21 @@ function openGallery(index){
 		shareButtons: [{id:'download', label:'Download image', url:'iphone-6-6-plus', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+	gallery.listen('afterChange', function() {
+		ga('send', 'event', 'Template gallery image changed', 'iPhone 6 &amp; 6 Plus');
+	});
+
+	gallery.listen('close', function() {
+		ga('send', 'event', 'Template gallery closed', 'iPhone 6 &amp; 6 Plus');
+	});
 	gallery.init();
 }
 $(document).ready(function(){
 	$('.template-gallery').slick({
 		dots: true,
 		arrows: false,
+	}).on('afterChange', function(e){
+		ga('send', 'event', 'Slider image change', 'iPhone 6 &amp; 6 Plus');
 	});
 	$.each($('.gallery-item'), function(index, img){
 		$(img).click(function(e){
@@ -80,7 +90,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;iPhone 6 &amp; 6 Plus&quot; By: Michael Stache | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;iPhone 6 &amp; 6 Plus&quot; By: Michael Stache | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;iPhone 6 &amp; 6 Plus&quot; By: @MichaelStache | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;iPhone 6 &amp; 6 Plus&quot; By: @MichaelStache | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/7gd6ZqNThOA4uomoW9HR_artboard_3_1x.png"/></div></div>
 </div>
@@ -91,7 +101,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="https://dribbble.com/shots/1721575-iPhone-6-6-Plus" target="_blank">dribbble.com</a></div>
 <div class="author-section">
-<div class="profile-picture"><img src="/images/profile.png" /></div>
+<div class="profile-picture"><img src="https://dl.airtable.com/flLAzlFRw2q15rpysene_wvfzm6TE_400x400.jpg"/></div>
 <div class="author-text">Michael Stache<br>iOS, MAC
 </div>
 </div>

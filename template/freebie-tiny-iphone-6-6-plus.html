@@ -18,6 +18,7 @@ function constructGalleryItem(){
 	});
 }
 function openGallery(index){
+	ga('send', 'event', 'Template gallery clicked', 'Freebie: Tiny iPhone 6 &amp; 6 Plus');
 	var pswpElement = document.querySelectorAll('.pswp')[0];
 	if(galleryItems.length == 0){
 		constructGalleryItem();
@@ -29,12 +30,21 @@ function openGallery(index){
 		shareButtons: [{id:'download', label:'Download image', url:'freebie-tiny-iphone-6-6-plus', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+	gallery.listen('afterChange', function() {
+		ga('send', 'event', 'Template gallery image changed', 'Freebie: Tiny iPhone 6 &amp; 6 Plus');
+	});
+
+	gallery.listen('close', function() {
+		ga('send', 'event', 'Template gallery closed', 'Freebie: Tiny iPhone 6 &amp; 6 Plus');
+	});
 	gallery.init();
 }
 $(document).ready(function(){
 	$('.template-gallery').slick({
 		dots: true,
 		arrows: false,
+	}).on('afterChange', function(e){
+		ga('send', 'event', 'Slider image change', 'Freebie: Tiny iPhone 6 &amp; 6 Plus');
 	});
 	$.each($('.gallery-item'), function(index, img){
 		$(img).click(function(e){

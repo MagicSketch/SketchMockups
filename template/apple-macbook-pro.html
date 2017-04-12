@@ -18,6 +18,7 @@ function constructGalleryItem(){
 	});
 }
 function openGallery(index){
+	ga('send', 'event', 'Template gallery clicked', 'Apple Macbook Pro');
 	var pswpElement = document.querySelectorAll('.pswp')[0];
 	if(galleryItems.length == 0){
 		constructGalleryItem();
@@ -29,12 +30,21 @@ function openGallery(index){
 		shareButtons: [{id:'download', label:'Download image', url:'apple-macbook-pro', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+	gallery.listen('afterChange', function() {
+		ga('send', 'event', 'Template gallery image changed', 'Apple Macbook Pro');
+	});
+
+	gallery.listen('close', function() {
+		ga('send', 'event', 'Template gallery closed', 'Apple Macbook Pro');
+	});
 	gallery.init();
 }
 $(document).ready(function(){
 	$('.template-gallery').slick({
 		dots: true,
 		arrows: false,
+	}).on('afterChange', function(e){
+		ga('send', 'event', 'Slider image change', 'Apple Macbook Pro');
 	});
 	$.each($('.gallery-item'), function(index, img){
 		$(img).click(function(e){

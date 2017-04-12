@@ -18,6 +18,7 @@ function constructGalleryItem(){
 	});
 }
 function openGallery(index){
+	ga('send', 'event', 'Template gallery clicked', 'Slate style iPhone 6 / 6+ mockup [Sketch]');
 	var pswpElement = document.querySelectorAll('.pswp')[0];
 	if(galleryItems.length == 0){
 		constructGalleryItem();
@@ -29,12 +30,21 @@ function openGallery(index){
 		shareButtons: [{id:'download', label:'Download image', url:'slate-style-iphone-6-6-mockup-sketch-', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+	gallery.listen('afterChange', function() {
+		ga('send', 'event', 'Template gallery image changed', 'Slate style iPhone 6 / 6+ mockup [Sketch]');
+	});
+
+	gallery.listen('close', function() {
+		ga('send', 'event', 'Template gallery closed', 'Slate style iPhone 6 / 6+ mockup [Sketch]');
+	});
 	gallery.init();
 }
 $(document).ready(function(){
 	$('.template-gallery').slick({
 		dots: true,
 		arrows: false,
+	}).on('afterChange', function(e){
+		ga('send', 'event', 'Slider image change', 'Slate style iPhone 6 / 6+ mockup [Sketch]');
 	});
 	$.each($('.gallery-item'), function(index, img){
 		$(img).click(function(e){

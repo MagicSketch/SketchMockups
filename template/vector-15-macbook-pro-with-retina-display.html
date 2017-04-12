@@ -18,6 +18,7 @@ function constructGalleryItem(){
 	});
 }
 function openGallery(index){
+	ga('send', 'event', 'Template gallery clicked', 'Vector 15&quot; Macbook Pro with Retina Display');
 	var pswpElement = document.querySelectorAll('.pswp')[0];
 	if(galleryItems.length == 0){
 		constructGalleryItem();
@@ -29,12 +30,21 @@ function openGallery(index){
 		shareButtons: [{id:'download', label:'Download image', url:'vector-15-macbook-pro-with-retina-display', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+	gallery.listen('afterChange', function() {
+		ga('send', 'event', 'Template gallery image changed', 'Vector 15&quot; Macbook Pro with Retina Display');
+	});
+
+	gallery.listen('close', function() {
+		ga('send', 'event', 'Template gallery closed', 'Vector 15&quot; Macbook Pro with Retina Display');
+	});
 	gallery.init();
 }
 $(document).ready(function(){
 	$('.template-gallery').slick({
 		dots: true,
 		arrows: false,
+	}).on('afterChange', function(e){
+		ga('send', 'event', 'Slider image change', 'Vector 15&quot; Macbook Pro with Retina Display');
 	});
 	$.each($('.gallery-item'), function(index, img){
 		$(img).click(function(e){

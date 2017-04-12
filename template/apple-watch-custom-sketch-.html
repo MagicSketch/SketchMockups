@@ -18,6 +18,7 @@ function constructGalleryItem(){
 	});
 }
 function openGallery(index){
+	ga('send', 'event', 'Template gallery clicked', 'Apple Watch - Custom [.sketch]');
 	var pswpElement = document.querySelectorAll('.pswp')[0];
 	if(galleryItems.length == 0){
 		constructGalleryItem();
@@ -29,12 +30,21 @@ function openGallery(index){
 		shareButtons: [{id:'download', label:'Download image', url:'apple-watch-custom-sketch-', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+	gallery.listen('afterChange', function() {
+		ga('send', 'event', 'Template gallery image changed', 'Apple Watch - Custom [.sketch]');
+	});
+
+	gallery.listen('close', function() {
+		ga('send', 'event', 'Template gallery closed', 'Apple Watch - Custom [.sketch]');
+	});
 	gallery.init();
 }
 $(document).ready(function(){
 	$('.template-gallery').slick({
 		dots: true,
 		arrows: false,
+	}).on('afterChange', function(e){
+		ga('send', 'event', 'Slider image change', 'Apple Watch - Custom [.sketch]');
 	});
 	$.each($('.gallery-item'), function(index, img){
 		$(img).click(function(e){
@@ -80,7 +90,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;Apple Watch - Custom [.sketch]&quot; By: Alexis Doreau | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;Apple Watch - Custom [.sketch]&quot; By: Alexis Doreau | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;Apple Watch - Custom [.sketch]&quot; By: @adoreau | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;Apple Watch - Custom [.sketch]&quot; By: @adoreau | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/dpbfnLSTS5ChtD7SkLxA_apple-watch-alexis-doreau.gif"/></div></div>
 </div>
@@ -91,7 +101,7 @@ $(document).ready(function(){
 </div>
 <div class="template-link"><a href="https://dribbble.com/shots/1721213-Apple-Watch-Custom-sketch" target="_blank">dribbble.com</a></div>
 <div class="author-section">
-<div class="profile-picture"><img src="/images/profile.png" /></div>
+<div class="profile-picture"><img src="https://dl.airtable.com/Nuu0I0T4TnKfxmKH3wq3_NR5K81m3_400x400.jpg"/></div>
 <div class="author-text">Alexis Doreau<br>iOS, MAC
 </div>
 </div>

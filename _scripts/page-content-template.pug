@@ -26,6 +26,7 @@ script(type="text/javascript").
 		});
 	}
 	function openGallery(index){
+		ga('send', 'event', 'Template gallery clicked', '#{r.fields.Name}');
 		var pswpElement = document.querySelectorAll('.pswp')[0];
 		if(galleryItems.length == 0){
 			constructGalleryItem();
@@ -37,12 +38,21 @@ script(type="text/javascript").
 			shareButtons: [{id:'download', label:'Download image', url:'#{s}', download:true}],
 		};
 		var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+		gallery.listen('afterChange', function() {
+			ga('send', 'event', 'Template gallery image changed', '#{r.fields.Name}');
+		});
+
+		gallery.listen('close', function() {
+			ga('send', 'event', 'Template gallery closed', '#{r.fields.Name}');
+		});
 		gallery.init();
 	}
 	$(document).ready(function(){
 		$('.template-gallery').slick({
 			dots: true,
 			arrows: false,
+		}).on('afterChange', function(e){
+			ga('send', 'event', 'Slider image change', '#{r.fields.Name}');
 		});
 		$.each($('.gallery-item'), function(index, img){
 			$(img).click(function(e){
