@@ -26,12 +26,12 @@ settings:
   staging:
     url: "https://strawberry.sketchmockups.com"
     analytics:
-      ga: ''
+      ga: 'UA-97236949-2'
       mixpanel: ''
   production:
     url: "https://sketchmockups.com"
     analytics:
-      ga: ''
+      ga: 'UA-97236949-1'
       mixpanel: ''
 
 defaults:
