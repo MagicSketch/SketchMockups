@@ -162,7 +162,7 @@ fi
 if [ "$option" = "count" -o "$option" = "all" ];  then
 	echo "Updating menu..."
 
-	curl "https://api.airtable.com/v0/appUM5HKj3inWajQG/Device?view=Main%20View&fields%5B%5D=Name&fields%5B%5D=Template%20Count" \
+	curl "https://api.airtable.com/v0/appUM5HKj3inWajQG/Device?view=Approved&fields%5B%5D=Name&fields%5B%5D=Template%20Count" \
 	-H "Authorization: Bearer keyxNf62XhQELuU9x" > dump.json
 
 	countJson=`jq -c '[foreach .records[] as $item ({}; setpath([ $item.fields.Name]; $item.fields["Template Count"])  | setpath(["All"]; .All + $item.fields["Template Count"]); .)] | .[length-1]' dump.json`
