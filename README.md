@@ -20,11 +20,8 @@ cd `_scripts`
 
 Tasks:
 
-Generate all templates:
+Generate all templates and left menu:
 `./generate-template-pages.sh all`
-
-Generate only menu:
-`./generate-template-pages.sh count`
 
 Generate a specified template: 
 `./generate-template-pages.sh name "{NAME}"`
@@ -37,3 +34,9 @@ Example:
 
 Generate template in a view:
 `./generate-template-pages.sh view Approved``
+
+
+
+Disabled:
+Generate only menu:
+`./generate-template-pages.sh count`
