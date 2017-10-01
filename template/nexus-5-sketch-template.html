@@ -18,6 +18,7 @@ function constructGalleryItem(){
 	});
 }
 function openGallery(index){
+	ga('send', 'event', 'Template gallery clicked', 'Nexus 5 Sketch template');
 	var pswpElement = document.querySelectorAll('.pswp')[0];
 	if(galleryItems.length == 0){
 		constructGalleryItem();
@@ -25,15 +26,25 @@ function openGallery(index){
 	var options = {
 		index: index,
 		showHideOpacity: true,
-		bgOpacity: 0.95
+		bgOpacity: 0.95,
+		shareButtons: [{id:'download', label:'Download image', url:'nexus-5-sketch-template', download:true}],
 	};
 	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+	gallery.listen('afterChange', function() {
+		ga('send', 'event', 'Template gallery image changed', 'Nexus 5 Sketch template');
+	});
+
+	gallery.listen('close', function() {
+		ga('send', 'event', 'Template gallery closed', 'Nexus 5 Sketch template');
+	});
 	gallery.init();
 }
 $(document).ready(function(){
 	$('.template-gallery').slick({
 		dots: true,
 		arrows: false,
+	}).on('afterChange', function(e){
+		ga('send', 'event', 'Slider image change', 'Nexus 5 Sketch template');
 	});
 	$.each($('.gallery-item'), function(index, img){
 		$(img).click(function(e){
@@ -79,7 +90,7 @@ $(document).ready(function(){
 </div>
 </div>
 <div class="preview-section">
-<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', 'Nexus 5 Sketch template #Sketchmockups')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', 'Nexus 5 Sketch template #Sketchmockups')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
+<div class="social"><div class="social-icon" onClick="twitterShare('{{ siteUrl }}{{ page.url }}', '&quot;Nexus 5 Sketch template&quot; By: @fffabs | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/twitter.svg" /></div><div class="social-icon" onClick="facebookShare('{{ siteUrl }}{{ page.url }}', '&quot;Nexus 5 Sketch template&quot; By: @fffabs | Sketchmockups {{ siteUrl }}{{ page.url }}')"><img src="/images/facebook.svg" /></div><div class="clearfix"></div>
 </div>
 <div class="template-gallery"><div><img class="gallery-item" src="https://dl.airtable.com/swGaLgdTo2UCgwsY79vw_nexus5_sketch_1x.png"/></div></div>
 </div>
